@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Developer Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b1120;
+    color: white;
+    line-height: 1.7;
+}
+
+:root {
+    --blue: #38bdf8;
+    --dark: #111827;
+    --card: #172033;
+}
+
+header {
+    background: var(--dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--blue);
+    font-size: 24px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a:hover {
+    color: var(--blue);
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 10%;
+    background: radial-gradient(circle at top right,
+        #193b5b, #0b1120 65%);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.intro {
+    color: var(--blue);
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 60px);
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero p {
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #0284c7;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0369a1;
+    transform: translateY(-3px);
+}
+
+section:not(.hero) {
+    max-width: 1200px;
+    margin: auto;
+    padding: 75px 10%;
+}
+
+section h2 {
+    color: var(--blue);
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-text {
+    text-align: center;
+    color: #cbd5e1;
+    max-width: 750px;
+    margin: auto;
+}
+
+.skills-container,
+.projects-container {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+}
+
+.skill, .project-card {
+    background: var(--card);
+    padding: 22px;
+    border: 1px solid #26354d;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.skill {
+    text-align: center;
+}
+
+.skill:hover,
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue);
+}
+
+.project-card h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #cbd5e1;
+    margin-bottom: 18px;
+}
+
+.project-link {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/* CONTACT FORM */
+
+.contact {
+    max-width: 650px !important;
+    text-align: center;
+}
+
+.contact p {
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background: var(--card);
+    color: white;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid var(--blue);
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+#form-message {
+    color: var(--blue);
+    margin-top: 12px;
+}
+
+/* SOCIAL LINKS */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+footer {
+    background: var(--dark);
+    text-align: center;
+    padding: 25px;
+    color: #94a3b8;
+}
+
+@media(max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    section:not(.hero) {
+        padding: 55px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+<nav class="navbar">
+    <h2 class="logo">MyPortfolio.</h2>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- HOME -->
+
+<section id="home" class="hero">
+<div class="hero-content">
+
+    <p class="intro">HELLO, I'M A STUDENT DEVELOPER</p>
+
+    <h1>
+        Building My Future
+        Through <span>Technology.</span>
+    </h1>
+
+    <p>
+        I am passionate about Python, programming,
+        web development and Artificial Intelligence.
+        I love building useful digital projects.
+    </p>
+
+    <a href="#projects" class="btn">Explore My Work</a>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+    <h2>About Me</h2>
+
+    <p class="about-text">
+        I am a student and aspiring software developer.
+        I have basic knowledge of Python and I am learning
+        HTML, CSS and JavaScript.
+
+        I enjoy exploring new technologies,
+        solving problems and creating applications.
+    </p>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+<h2>My Technical Skills</h2>
+
+<div class="skills-container">
+    <div class="skill">Python - Basic</div>
+    <div class="skill">HTML - Learning</div>
+    <div class="skill">CSS - Learning</div>
+    <div class="skill">JavaScript - Learning</div>
+    <div class="skill">Problem Solving</div>
+    <div class="skill">AI Enthusiast</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+<h2>My Projects</h2>
+
+<div class="projects-container">
+
+    <div class="project-card">
+        <h3>Personal Portfolio</h3>
+        <p>
+            A responsive personal website created
+            using HTML, CSS and JavaScript.
+        </p>
+        <a href="#home" class="project-link">
+            View Project →
+        </a>
+    </div>
+
+    <div class="project-card">
+        <h3>Python Calculator</h3>
+        <p>
+            A beginner Python project that performs
+            basic mathematical calculations.
+        </p>
+        <span class="project-link">Coming Soon</span>
+    </div>
+
+    <div class="project-card">
+        <h3>Student Management System</h3>
+        <p>
+            A planned application for managing
+            student records and academic progress.
+        </p>
+        <span class="project-link">Coming Soon</span>
+    </div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<h2>Contact Me</h2>
+
+<p>
+    Have a project idea or want to connect?
+    Send me a message.
+</p>
+
+<form id="contactForm">
+
+    <input
+        type="text"
+        id="name"
+        placeholder="Your Name"
+        required
+    >
+
+    <input
+        type="email"
+        id="email"
+        placeholder="Your Email"
+        required
+    >
+
+    <textarea
+        id="message"
+        placeholder="Write your message..."
+        required
+    ></textarea>
+
+    <button type="submit" class="btn">
+        Send Message
+    </button>
+
+</form>
+
+<p id="form-message" aria-live="polite"></p>
+
+<div class="social-links">
+
+    <a href="https://github.com/"
+       target="_blank" rel="noopener noreferrer">
+       GitHub
+    </a>
+
+    <a href="https://www.linkedin.com/"
+       target="_blank" rel="noopener noreferrer">
+       LinkedIn
+    </a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <p>
+        © <span id="year"></span>
+        My Portfolio. Built with HTML, CSS and JavaScript.
+    </p>
+</footer>
+
+<script>
+
+// Automatically update year
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// Contact form
+
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+        document.getElementById("form-message").textContent =
+            "Please complete all fields.";
+        return;
+    }
+
+    const recipient = "your-email@example.com";
+
+    const subject = encodeURIComponent(
+        "Portfolio enquiry from " + name
+    );
+
+    const body = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\nMessage: " + message
+    );
+
+    document.getElementById("form-message").textContent =
+        "Opening your email application...";
+
+    window.location.href =
+        "mailto:" + recipient +
+        "?subject=" + subject +
+        "&body=" + body;
+
+});
+
+console.log("Portfolio website loaded successfully!");
+
+</script>
+
+</body>
+</html>
